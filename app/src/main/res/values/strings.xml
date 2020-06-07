@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ContactList</string>
+    <string name="name">name</string>
+    <string name="surname">surname</string>
+    <string name="pandemic_name">pandemic name</string>
+    <string name="email">email</string>
+    <string name="year_of_birth">year of birth</string>
+    <string name="update">Update contact</string>
+    <string name="reverse">Reverse</string>
+    <string name="updateList">update list</string>
+
+    <string-array name="dialog_list">
+        <item>Details</item>
+        <item>Delete</item>
+    </string-array>
+
+</resources>

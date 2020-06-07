@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:paddingLeft="16dp"
+            android:scaleType="fitStart" />
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/photo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/surname"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/pandemicname"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/surname"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pandemicname"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/year_of_birth"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/root2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/root"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/update" />
+
+        <Button
+            android:id="@+id/reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/add_contact"
+            android:layout_marginLeft="180dp"
+            android:text="@string/reverse"
+
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
