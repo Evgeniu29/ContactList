@@ -3,6 +3,7 @@ package com.example.contactlist
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contactlist.adapter.ContactsAdapter
 import com.example.contactlist.model.Contact
 import com.example.contactlist.model.ContactsListDatabase
-
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -27,8 +27,6 @@ open class MainActivity : AppCompatActivity(), ContactsAdapter.OnContactItemClic
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         contactListDatabase = ContactsListDatabase.getInstance(this)
 
         GlobalScope.launch {
@@ -54,16 +52,21 @@ open class MainActivity : AppCompatActivity(), ContactsAdapter.OnContactItemClic
         updateList.setOnClickListener(){
             GlobalScope.launch  {
                 contactListDatabase!!.getContactsDao().deleteAll()
-                contactListDatabase?.getContactsDao()?.insertAll(contactList)
-                adapter.contactList = contactListDatabase?.getContactsDao()?.getContactList() as MutableList<Contact>
+                contactList.clear();
+                contactListDatabase?.getContactsDao()?.insertAll(getContacts())
+                contactList = contactListDatabase?.getContactsDao()?.getContactList() as MutableList<Contact>
 
             }
+
+            adapter.contactList = contactList
 
             adapter.notifyDataSetChanged()
 
         }
 
     }
+
+
 
         fun getContacts(): MutableList<Contact> {
 
